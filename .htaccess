@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    
+    RewriteBase /zbit/mysanus.pt/
+
+    RewriteCond %{HTTP_HOST} ^mysanus.pt
+    RewriteRule (.*) http://www.mysanus.pt/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+    
+    RewriteRule .* index.php/$0 [L]
+
+</IfModule> 
